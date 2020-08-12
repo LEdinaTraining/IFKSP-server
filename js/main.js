@@ -54,7 +54,10 @@ function createAnyElement(name, attributes) {
 function createBtnGroup() {
     let group = createAnyElement("div", {class: "btn btn-group"});
     let infoBtn = createAnyElement("button", {class: "btn btn-info"});
+    infoBtn.innerHTML = '<i class="fa fa-refresh" aria-hidden="true"></i>';
     let delBtn = createAnyElement("button", {class: "btn btn-danger"});
+    delBtn.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+
  
     group.appendChild(infoBtn);
     group.appendChild(delBtn);
