@@ -35,6 +35,8 @@ function fillDataTable(data, tableID) {
             td.innerHTML = row[k];
             tr.appendChild(td);
         }
+        let btnGroup = createBtnGroup();
+        tr.appendChild(btnGroup);
         tBody.appendChild(tr);
     }
 }
@@ -49,12 +51,17 @@ function createAnyElement(name, attributes) {
 }
 
 //Gombgyár - segédfüggvény - (új gomb előállítása - név és attribútumok)
-function createBtnGroup(rowID) {
-    let btnGroup = createAnyElement("div", { class: "btn btn-group" });
-    let infoBtn = createAnyElement("button", { class: "btn btn-info" });
-    let delBtn = createAnyElement("button", { class: "btn btn-danger" });
+function createBtnGroup() {
+    let group = createAnyElement("div", {class: "btn btn-group"});
+    let infoBtn = createAnyElement("button", {class: "btn btn-info"});
+    let delBtn = createAnyElement("button", {class: "btn btn-danger"});
+ 
     group.appendChild(infoBtn);
     group.appendChild(delBtn);
-    return group;
+
+    let td = createAnyElement("td");
+    td.appendChild(group);
+
+    return td;
 
 }
