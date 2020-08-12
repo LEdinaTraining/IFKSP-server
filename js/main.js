@@ -39,10 +39,22 @@ function fillDataTable(data, tableID) {
     }
 }
 
+//Elemgyár - segédfüggvény - (új elem előállítása - név és attribútumok)
 function createAnyElement(name, attributes) {
     let element = document.createElement(name);
     for (let k in attributes) {
         element.setAttribute(k, attributes[k]);
     }
     return element;
+}
+
+//Gombgyár - segédfüggvény - (új gomb előállítása - név és attribútumok)
+function createBtnGroup(rowID) {
+    let btnGroup = createAnyElement("div", { class: "btn btn-group" });
+    let infoBtn = createAnyElement("button", { class: "btn btn-info" });
+    let delBtn = createAnyElement("button", { class: "btn btn-danger" });
+    group.appendChild(infoBtn);
+    group.appendChild(delBtn);
+    return group;
+
 }
